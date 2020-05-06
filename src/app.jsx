@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
-
+// taro ui style
+import "taro-ui/dist/style/index.scss";
+// diy style
 import './app.less'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -10,34 +12,59 @@ import './app.less'
 // }
 
 class App extends Component {
+  componentDidMount() {}
 
-  componentDidMount () {}
+  componentDidShow() {}
 
-  componentDidShow () {}
+  componentDidHide() {}
 
-  componentDidHide () {}
-
-  componentDidCatchError () {}
-
+  componentDidCatchError() {}
+  // 页面路由
   config = {
     pages: [
-      'pages/index/blog/blog',
-      'pages/index/index'
+      "pages/index/index",
+      "pages/article/index",
+      "pages/author/index"
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      backgroundTextStyle: "light",
+      navigationBarBackgroundColor: "#fff",
+      navigationBarTitleText: "WeChat",
+      navigationBarTextStyle: "black"
+    },
+    // 小程序
+    tabBar: {
+      color: "#626567",
+      selectedColor: "#2A8CE5",
+      backgroundColor: "#FBFBFB",
+      borderStyle: "white",
+      list: [
+        {
+          pagePath: "pages/index/index",
+          text: "首页",
+          iconPath: "./assets/img/home.png",
+          selectedIconPath: "./assets/img/selectHome.png"
+        },
+        {
+          pagePath: "pages/article/index",
+          text: "文章",
+          iconPath: "./assets/img/article.png",
+          selectedIconPath: "./assets/img/selectArticle.png"
+        },
+        {
+          pagePath: "pages/author/index",
+          text: "木木",
+          iconPath: "./assets/img/author.png",
+          selectedIconPath: "./assets/img/selectAuthor.png"
+        }
+      ]
     }
-  }
+  };
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
-    return (
-      <Index />
-    )
+  render() {
+    return <Index />;
   }
 }
 
