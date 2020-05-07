@@ -2,6 +2,9 @@ import Taro from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import { AtNavBar, AtMessage } from "taro-ui";
 export default function NavBar (props) {
+  NavBar.defaultProps = {
+    title:'首页'
+  }
     function clickLeft () {
         if (Taro.getCurrentPages().length === 1) {
              Taro.atMessage({

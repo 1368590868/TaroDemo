@@ -24,7 +24,8 @@ class App extends Component {
     pages: [
       "pages/index/index",
       "pages/article/index",
-      "pages/author/index"
+      "pages/author/index",
+      "pages/detail/index"
     ],
     window: {
       backgroundTextStyle: "light",
@@ -58,6 +59,12 @@ class App extends Component {
           selectedIconPath: "./assets/img/selectAuthor.png"
         }
       ]
+    },
+    plugins: {
+      wxparserPlugin: {
+        version: "0.3.0",
+        provider: "wx9d4d4ffa781ff3ac"
+      }
     }
   };
 

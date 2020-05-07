@@ -8,8 +8,7 @@ function Index () {
   const [article, setArticle] = useState([])
   
   useEffect(() => {
-    Taro.request({ url: 'https://irlin.cn/api/article'}).then(res => {
-      console.log(res.data);
+    Taro.request({ url: 'https://irlin.cn/api/homeArticle'}).then(res => {
         setArticle(res.data.data);
      })
    
@@ -53,7 +52,7 @@ function Index () {
       </Swiper>
       {/* 文章标题 */}
       <View className="home-article-title">
-        <AtDivider content="文章列表" fontColor="#2d8cf0" lineColor="#2d8cf0" />
+        <AtDivider content="推荐文章" fontColor="#2d8cf0" lineColor="#2d8cf0" />
       </View>
       <HomeArticle article={article}/>
     </View>
